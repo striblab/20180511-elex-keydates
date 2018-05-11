@@ -1,0 +1,24 @@
+{
+  "about this file": "This document defines configuration for this project that is not content or copy.",
+  "projectIdentifier": "20180511-elex-keydates",
+
+  "cms": {
+    "id": "NEEDS-CMS-ID-IN-CONFIG.JSON",
+    "pages": ["other", "cms-ids"],
+    "lcds": ["other", "cms-ids"]
+  },
+
+
+  "content": {
+
+  },
+  "publish": {
+
+    "production": {
+      "bucket": "static.startribune.com",
+      "path": "news/projects/all/20180511-elex-keydates",
+      "url": "http://static.startribune.com/news/projects/all/20180511-elex-keydates/",
+      "cacheSeconds": 600
+    }
+  }
+}
