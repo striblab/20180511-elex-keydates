@@ -1,247 +1,46 @@
 <div class="strib strib-styles strib-styles-specifically">
   <div class="container-lg elex-header">
   	<h5 class="font-popular-light"><span  class="font-popular-medium">Election 2018</span> Key dates</h5>
-  	<h1>Minnesota election calendar 2018</h1>
-  	<p class="byline">By Star Tribune Staff • <span>Star Tribune</span></p>
+  	<h1><%= archie.Headline %></h1>
+  	<p class="byline">By <%= archie.Byline %> • <span>Star Tribune</span></p>
   	<!-- share -->
   </div>
 
   <div class="container-lg elex-main">
 
     <section class="leadin">
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+      <p><%= archie.Leadin %></p>
     </section>
 
     <section class="elex-calendar-container">
 
+      <% _.each(archie.dates, date => {%>
       <div class="elex-calendar-row">
         <div class="elex-calendar-date">
-          June 1
+          <%= date['Date-text'] %>
         </div>
         <div class="elex-calendar-item">
           <div class="elex-calendar-item-title">
-            State conventions
+            <%= date.Title %>
           </div>
           <div class="elex-calendar-item-desc">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            <%= date.Text %>
           </div>
-        </div>
-      </div>
-
-      <!-- ROW -->
-
-      <div class="elex-calendar-row">
-        <div class="elex-calendar-date">
-          June 14
-        </div>
-        <div class="elex-calendar-item">
-          <div class="elex-calendar-item-title">
-            Second quarter fundraising reports due (statewide candidates)
-          </div>
-          <div class="elex-calendar-item-desc">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          </div>
+          <% if (date.links) { %>
           <div class="elex-calendar-item-related">
             <ul>
-              <li><a href="http://www.startribune.com/campaign-finance-2018-minnesota-governor-tim-walz-leads-money-race-tim-pawlenty-close-behind/478334513/">Follow Star Tribune campaign finance coverage here</a></li>
+              <% _.each(date.links, link => {%>
+              <li><%- link %></li>
+              <% }) %>
             </ul>
           </div>
+          <% } %>
         </div>
       </div>
 
       <!-- ROW -->
 
-      <div class="elex-calendar-row">
-        <div class="elex-calendar-date">
-          June 29
-        </div>
-        <div class="elex-calendar-item">
-          <div class="elex-calendar-item-title">
-            Absentee ballots available for primary
-          </div>
-          <div class="elex-calendar-item-desc">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          </div>
-        </div>
-      </div>
-
-      <!-- ROW -->
-
-      <div class="elex-calendar-row">
-        <div class="elex-calendar-date">
-          July 15
-        </div>
-        <div class="elex-calendar-item">
-          <div class="elex-calendar-item-title">
-            Second quarter fundraising reports due (federal candidates, PACs)
-          </div>
-          <div class="elex-calendar-item-desc">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          </div>
-        </div>
-      </div>
-
-      <!-- ROW -->
-
-      <div class="elex-calendar-row">
-        <div class="elex-calendar-date">
-          July 24
-        </div>
-        <div class="elex-calendar-item">
-          <div class="elex-calendar-item-title">
-            Pre-registration day for primary election
-          </div>
-          <div class="elex-calendar-item-desc">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          </div>
-        </div>
-      </div>
-
-      <!-- ROW -->
-
-      <div class="elex-calendar-row">
-        <div class="elex-calendar-date">
-          July 30
-        </div>
-        <div class="elex-calendar-item">
-          <div class="elex-calendar-item-title">
-            Pre-primary fundraising reports due for statewide and legislative candidates
-          </div>
-          <div class="elex-calendar-item-desc">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          </div>
-        </div>
-      </div>
-
-      <!-- ROW -->
-
-      <div class="elex-calendar-row">
-        <div class="elex-calendar-date">
-          Aug. 14
-        </div>
-        <div class="elex-calendar-item">
-          <div class="elex-calendar-item-title">
-            Primary election
-          </div>
-          <div class="elex-calendar-item-desc">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          </div>
-        </div>
-      </div>
-
-      <!-- ROW -->
-
-      <div class="elex-calendar-row">
-        <div class="elex-calendar-date">
-          Sept. 21
-        </div>
-        <div class="elex-calendar-item">
-          <div class="elex-calendar-item-title">
-            Absentee ballots available for general election
-          </div>
-          <div class="elex-calendar-item-desc">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          </div>
-        </div>
-      </div>
-
-      <!-- ROW -->
-
-      <div class="elex-calendar-row">
-        <div class="elex-calendar-date">
-          Sept. 25
-        </div>
-        <div class="elex-calendar-item">
-          <div class="elex-calendar-item-title">
-            42-day pre-general election fundraising reports due for statewide candidates
-          </div>
-          <div class="elex-calendar-item-desc">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          </div>
-        </div>
-      </div>
-
-      <!-- ROW -->
-
-      <div class="elex-calendar-row">
-        <div class="elex-calendar-date">
-          Oct. 15
-        </div>
-        <div class="elex-calendar-item">
-          <div class="elex-calendar-item-title">
-            Third-quarter fundraising reports due for congressional candidates, federal PAC
-          </div>
-          <div class="elex-calendar-item-desc">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          </div>
-        </div>
-      </div>
-
-      <!-- ROW -->
-
-      <div class="elex-calendar-row">
-        <div class="elex-calendar-date">
-          Oct. 16
-        </div>
-        <div class="elex-calendar-item">
-          <div class="elex-calendar-item-title">
-            Voting pre-registration deadline for general election
-          </div>
-          <div class="elex-calendar-item-desc">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          </div>
-        </div>
-      </div>
-
-      <!-- ROW -->
-
-      <div class="elex-calendar-row">
-        <div class="elex-calendar-date">
-          Oct. 25
-        </div>
-        <div class="elex-calendar-item">
-          <div class="elex-calendar-item-title">
-            Pre-general election fundraising reports due for congressional candidates, federal PACs
-          </div>
-          <div class="elex-calendar-item-desc">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          </div>
-        </div>
-      </div>
-
-      <!-- ROW -->
-
-      <div class="elex-calendar-row">
-        <div class="elex-calendar-date">
-          Oct. 29
-        </div>
-        <div class="elex-calendar-item">
-          <div class="elex-calendar-item-title">
-            Pre-general fundraising reports due for statewide and legislative candidates
-          </div>
-          <div class="elex-calendar-item-desc">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          </div>
-        </div>
-      </div>
-
-      <!-- ROW -->
-
-      <div class="elex-calendar-row">
-        <div class="elex-calendar-date">
-          Nov. 6
-        </div>
-        <div class="elex-calendar-item">
-          <div class="elex-calendar-item-title">
-            General Election
-          </div>
-          <div class="elex-calendar-item-desc">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          </div>
-        </div>
-      </div>
-
-      <!-- ROW -->
+      <% }) %>
 
     </section>
 

@@ -33,7 +33,6 @@ const webpackConfig = require('./webpack.config.js');
 const del = require('del');
 const gulpContent = require('./lib/gulp-content.js');
 const gulpPublish = require('./lib/gulp-publish.js');
-const gulpArchie = require('./lib/gulp-archie.js');
 const _ = require('lodash');
 const jest = require('./lib/gulp-jest.js');
 const pkg = require('./package.json');
@@ -41,17 +40,19 @@ const config = exists('config.custom.json') ? require('./config.custom.json') : 
 
 const argv = require('yargs').argv;
 require('dotenv').load({ silent: true });
+require('./lib/gulp-archie.js');
 
 // Process base html templates/pages (not templates used in front-end JS)
 gulp.task('html', () => {
   const content = exists('content.json') ? require('./content.json') : {};
+  const archie = exists('./sources/archie.json') ? require('./sources/archie.json') : {};
 
   return gulp.src(['pages/**/*.ejs.html', '!pages/**/_*.ejs.html'])
     .pipe(include({
       prefix: '@@',
       basepath: '@file'
     }))
-    .pipe(ejs({ config: config, content: content, package: pkg, _: _ }).on('error', gutil.log))
+    .pipe(ejs({ config: config, archie: archie, content: content, package: pkg, _: _ }).on('error', gutil.log))
     .pipe(rename(function(path) {
       path.basename = path.basename.replace('.ejs', '');
     }))
@@ -217,7 +218,7 @@ gulp.task('publish:confirm', gulpPublish.confirmToken(gulp));
 gulp.task('publish:open', gulpPublish.openURL(gulp));
 
 // Full build
-gulp.task('build', ['publish:config', 'assets', 'html:lint', 'styles', 'js']);
+gulp.task('build', ['publish:config', 'assets', 'archie', 'html:lint', 'styles', 'js']);
 gulp.task('default', ['build']);
 
 // Deploy (build and publish)
