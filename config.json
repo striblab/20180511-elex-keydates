@@ -2,12 +2,20 @@
   "about this file": "This document defines configuration for this project that is not content or copy.",
   "projectIdentifier": "20180511-elex-keydates",
 
+  "archie": {
+    "googleDocId": "1pg9n0op0JrKjNvpdXPtEh01PYjCsbmuY9yq97aUuOfo",
+    "googleClientId": "971188644461-jiumgc01ma8q5qhhr17ecdaesn1dtev5.apps.googleusercontent.com",
+    "googleClientSecret": "gQa2asnhSoIY7B5c0duLKsT9",
+    "redirectPort": "6006",
+    "exportPath": "./sources/archie.json",
+    "tokenPath": "./archie-token.json"
+  },
+
   "cms": {
     "id": "NEEDS-CMS-ID-IN-CONFIG.JSON",
     "pages": ["other", "cms-ids"],
     "lcds": ["other", "cms-ids"]
   },
-
 
   "content": {
 

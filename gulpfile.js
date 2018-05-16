@@ -33,6 +33,7 @@ const webpackConfig = require('./webpack.config.js');
 const del = require('del');
 const gulpContent = require('./lib/gulp-content.js');
 const gulpPublish = require('./lib/gulp-publish.js');
+const gulpArchie = require('./lib/gulp-archie.js');
 const _ = require('lodash');
 const jest = require('./lib/gulp-jest.js');
 const pkg = require('./package.json');
