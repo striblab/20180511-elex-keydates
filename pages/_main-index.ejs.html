@@ -9,7 +9,7 @@
   <div class="container-lg elex-main">
 
     <section class="leadin">
-      <p><%= archie.Leadin %></p>
+      <p><%- archie.Leadin %></p>
     </section>
 
     <section class="elex-calendar-container">
@@ -24,7 +24,7 @@
             <%= date.Title %>
           </div>
           <div class="elex-calendar-item-desc">
-            <%= date.Text %>
+            <%- date.Text %>
           </div>
           <% if (date.links) { %>
           <div class="elex-calendar-item-related">
@@ -46,7 +46,7 @@
 
     <!-- FOOTER/SOURCES -->
     <footer>
-      <p>Source: Star Tribune reporting</p>
+      <p>Source: <%- archie.Source %></p>
     </footer>
 
   </div>
