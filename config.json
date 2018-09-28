@@ -10,14 +10,11 @@
     "tokenPath": "./archie-token.json"
   },
   "cms": {
-    "id": "NEEDS-CMS-ID-IN-CONFIG.JSON",
+    "id": "483224691",
     "pages": [
-      "other",
-      "cms-ids"
     ],
     "lcds": [
-      "other",
-      "cms-ids"
+      "483226321"
     ]
   },
   "content": {},
@@ -35,5 +32,5 @@
       "cacheSeconds": 10
     }
   },
-  "publishToken": "c7669755bc9155535ceb0afeb86a7588"
+  "publishToken": "9d81f8a1b56555c3a35da0a9f9a07fbf"
 }
