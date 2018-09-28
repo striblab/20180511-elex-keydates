@@ -80,7 +80,19 @@
     var span = document.getElementById('outlook-address');
 
     span.onclick = function() {
+      var self = this;
+
       document.execCommand("copy");
+
+      var classString = this.className;
+      var newClass = classString.concat(" clicked");
+      this.className = newClass;
+
+      setTimeout(function() {
+        console.log('sdf');
+        self.className = '';
+      }, 1000);
+      
     }
 
     span.addEventListener("copy", function(event) {
