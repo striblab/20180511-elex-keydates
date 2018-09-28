@@ -9,7 +9,20 @@
   <div class="container-lg elex-main">
 
     <section class="leadin">
-      <p><%- archie.Leadin %></p>
+      <%- archie.Leadin %>
+
+      <div class="cf" id="navigation">
+        <nav>
+          <div class="nav-header">Install this calendar in ...</div>
+          <ul>
+            <a id="navgoogle" href="http://bit.ly/star-tribune-elections-calendar"><li>Google</li></a>
+            <a id="navios" href="http://bit.ly/star-tribune-elections-calendar-ios"><li>iPhone</li></a>
+            <a id="navoutlook" onclick="toggle_outlook(); return false;" href="#"><li>Outlook</li></a>
+          </ul>
+        </nav>
+        <p id="outlook-instrux">First <span id="outlook-address">click here</span> to copy a link to the calendar to your clipboard. Then follow these instructions to add it to <a href="https://support.office.com/en-us/article/Import-or-subscribe-to-a-calendar-in-Outlook-com-or-Outlook-on-the-web-cff1429c-5af6-41ec-a5b4-74f2c278e98c">Outlook.com</a> or your <a href="https://support.office.com/en-us/article/View-and-subscribe-to-Internet-Calendars-7CD5D35A-4A90-4D70-A2F7-F6FADD7E2D9A">Outlook desktop client</a>.</p>
+      </div>
+
     </section>
 
     <section class="elex-calendar-container">
@@ -50,5 +63,32 @@
     </footer>
 
   </div>
+
+  <script type="text/javascript">
+    function toggle_outlook() {
+      var e = document.getElementById('outlook-instrux');
+
+      if(e.style.display == 'block') {
+        console.log(e.style.display);
+        e.style.display = 'none';
+      } else {
+        console.log(e.style.display);
+        e.style.display = 'block';
+      }
+    }
+
+    var span = document.getElementById('outlook-address');
+
+    span.onclick = function() {
+      document.execCommand("copy");
+    }
+
+    span.addEventListener("copy", function(event) {
+      event.preventDefault();
+      if (event.clipboardData) {
+        event.clipboardData.setData("text/plain", 'webcal://calendar.google.com/calendar/ical/tkhukck7m1eov7v1ggrvkns64g@group.calendar.google.com/public/basic.ics');
+      }
+    });
+  </script>
 
 </div>

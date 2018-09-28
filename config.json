@@ -1,7 +1,6 @@
 {
   "about this file": "This document defines configuration for this project that is not content or copy.",
   "projectIdentifier": "20180511-elex-keydates",
-
   "archie": {
     "googleDocId": "1pg9n0op0JrKjNvpdXPtEh01PYjCsbmuY9yq97aUuOfo",
     "googleClientId": "971188644461-jiumgc01ma8q5qhhr17ecdaesn1dtev5.apps.googleusercontent.com",
@@ -10,23 +9,31 @@
     "exportPath": "./sources/archie.json",
     "tokenPath": "./archie-token.json"
   },
-
   "cms": {
     "id": "NEEDS-CMS-ID-IN-CONFIG.JSON",
-    "pages": ["other", "cms-ids"],
-    "lcds": ["other", "cms-ids"]
+    "pages": [
+      "other",
+      "cms-ids"
+    ],
+    "lcds": [
+      "other",
+      "cms-ids"
+    ]
   },
-
-  "content": {
-
-  },
+  "content": {},
   "publish": {
-
     "production": {
       "bucket": "static.startribune.com",
       "path": "news/projects/all/20180511-elex-keydates",
       "url": "http://static.startribune.com/news/projects/all/20180511-elex-keydates/",
       "cacheSeconds": 600
+    },
+    "staging": {
+      "bucket": "static.startribune.com",
+      "path": "staging/news/projects/all/20180511-elex-keydates",
+      "url": "http://static.startribune.com/staging/news/projects/all/20180511-elex-keydates/",
+      "cacheSeconds": 10
     }
-  }
+  },
+  "publishToken": "c7669755bc9155535ceb0afeb86a7588"
 }
